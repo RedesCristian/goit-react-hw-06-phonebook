@@ -22,7 +22,20 @@ const contactFormSlice = createSlice({
       state.number = action.payload;
     },
     addContact: (state, action) => {
-      state.contacts.push(action.payload);
+      const newContact = action.payload;
+
+      const contactExists = state.contacts.some(
+        contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
+      );
+
+      if (contactExists) {
+        alert('The contact is already in the phonebook');
+      } else {
+        state.contacts.push(newContact);
+      }
+
+      state.name = '';
+      state.number = '';
     },
     deleteContact: (state, action) => {
       state.contacts = state.contacts.filter(

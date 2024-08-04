@@ -5,7 +5,7 @@ import styles from './ContactForm.module.css';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const { name, number } = useSelector(state => state.contacts); // Verifică această linie
+  const { name, number } = useSelector(state => state.contacts);
 
   const handleNameChange = evt => {
     dispatch(setName(evt.target.value));
@@ -15,7 +15,8 @@ const ContactForm = () => {
   };
   const handleSubmit = evt => {
     evt.preventDefault();
-    dispatch(addContact({ name, number })); // Asigură-te că `addContact` primește payload-ul corect
+
+    dispatch(addContact({ name, number }));
   };
   return (
     <div>

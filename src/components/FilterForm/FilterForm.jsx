@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setFilter } from '../../redux/filterSlice';
+import styles from './FilterForm.module.css';
 
 const FilterForm = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const FilterForm = () => {
   };
 
   return (
-    <div>
+    <div className={styles.filterContainer}>
       <h2>Filter Contacts</h2>
       <label htmlFor="filter">Filter by name</label>
       <input
