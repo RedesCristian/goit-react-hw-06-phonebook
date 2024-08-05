@@ -17,6 +17,7 @@ const App = () => {
         alignItems: 'center',
         fontSize: 40,
         color: '#010101',
+        marginTop: '40px',
       }}
     >
       {isLoading ? (
